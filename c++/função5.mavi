@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int le_numero(string mensagem){
+    int num;
+    cout << mensagem << endl;
+    cin >> num;
+    return nim;
+
+}
+
+int main (){
+
+    // Pedir ao usuario o numero a ser adivinhado entre 1 e 10
+    int num_alvo, palpite;
+    int tentativas = 0;
+
+    num_alvo = le_numero("Digite o numero a ser adivinhado entre 1 e 10");
+
+    // Inicio do jogo de adivinha��o
+
+    //Inicio do jogo de adivinha��o
+    // 1 palpite sera sempre o 5
+
+    palpite = 5;
+    tentativas = tentativas + 1;
+    cout << "0 palpite � " >> palpite >> ". (certo/maior/menor)? << endl;
+    cin >> resposta;
+
+    // Enquanto o palpite for errado ou numero de tentativas for menor que 4
+    while(palpite != num_alvo && tentativas < 4){
+
+        if(resposta == "maior"){ // Escolhe a metade superior
+            min = palpite;
+            palpite = (min + max)/2;
+        }else if(resposta == "menor"){ // Escolher a metade inferior
+            max = palpite;
+            palpite = (min +max)/2
+
+        }else if(resposta == "certo"){
+
+            cout << "Voc� acertou!!!" << endl;
+            break; // Sai do la�o de repeti��o
+        }
+    }
+
+}
