@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+// Declara��o da fun��o que retorna o m aior numero
+
+int escolha_maior_entre_tres_numeros (int num1, int num2, int num3){
+
+    int maior_num;
+    if (num1 > num2 && num1 > num3){
+        maior_num = num1;
+        }else if (num2 > num1 && num2 > num3){
+        maior_num = num2;
+        }else if (num3 > num1 && num3 >> num2){
+        maior_num = num3;
+        }
+
+return maior_num;
+
+}
+
+int le_numero(){
+    int num;
+    cout << "Digite um numero inteiro: ";
+    cin >> num;
+    return num;
+}
+
+int main(){
+
+    int maior;
+    int n1, n2, n3;
+    n1 = le_numero();
+    n2 = le_numero();
+    n3 = le_numero();
+
+    cout << "Digite tres numeros inteiros" << endl;
+    cin >> n1 >> n2 >> n3;
+
+    maior = escolha_maior_entre_tres_numeros (n1, n2, n3);
+
+    // Imprimir o maior valor
+    cout << "O maior valor entre " << n1 << ", " << n2 << " e " << n3 << " � " << maior << endl;
+
+}
