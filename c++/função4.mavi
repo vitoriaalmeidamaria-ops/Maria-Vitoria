@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Fun��o para calcular o total de dias de vida
+int calcular_dias_totais(int anos, int meses, int dias) {
+    int total_dias = (anos * 365) + (meses * 30) + dias;
+    return total_dias;
+}
+
+// Fun��o que l� um dos n�mero e mostra uma mensagem
+int le_numero(string mensagem) {
+    int numero;
+    cout << mensagem;
+    cin >> numero;
+    return numero;
+}
+
+int main() {
+    int anos, meses, dias, dias_totais;
+
+    anos = le_numero("Digite quantos anos voc� tem: ");
+    meses = le_numero("Digite quantos meses a mais voc� tem: ");
+    dias = le_numero("Digite quantos dias a mais voc� tem: ");
+
+    dias_totais = calcular_dias_totais(anos, meses, dias);
+
+    cout << "\nVoc� tem " << dias_totais << " dias de vida!" << endl;
+
+    return 0;
+}
