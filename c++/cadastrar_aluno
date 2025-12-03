@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Data {
+    int dia;
+    int mes;
+    int ano;
+};
+
+struct Aluno {
+    string nome;
+    Data nascimento;
+    string matricula;
+    string curso;
+    int cpf;
+    int telefone;
+};
+
+Aluno cadastrar_aluno() {
+    Aluno a;
+
+    cout << "\nDigite o nome do aluno: ";
+    cin >> a.nome;
+
+    cout << "Digite dia, mes e ano de nascimento: ";
+    cin >> a.nascimento.dia >> a.nascimento.mes >> a.nascimento.ano;
+
+    cout << "Digite a matricula: ";
+    cin >> a.matricula;
+
+    cout << "Digite o curso: ";
+    cin >> a.curso;
+
+    cout << "Digite o CPF: ";
+    cin >> a.cpf;
+
+    cout << "Digite o telefone: ";
+    cin >> a.telefone;
+
+    return a;
+}
+
+void imprimir_aluno(Aluno a) {
+    cout << "\n===== DADOS DO ALUNO =====\n";
+    cout << "Nome: " << a.nome << endl;
+    cout << "Data de nascimento: " << a.nascimento.dia << "/" 
+         << a.nascimento.mes << "/" << a.nascimento.ano << endl;
+    cout << "Matricula: " << a.matricula << endl;
+    cout << "Curso: " << a.curso << endl;
+    cout << "CPF: " << a.cpf << endl;
+    cout << "Telefone: " << a.telefone << endl;
+}
+
+int main() {
+
+    int n;
+    cout << "Quantos alunos deseja cadastrar? ";
+    cin >> n;
+
+    // Vetor para armazenar todos os alunos cadastrados
+    Aluno vet[n];
+
+    // Cadastrar todos
+    for (int i = 0; i < n; i++) {
+        cout << "\n--- Cadastro do aluno " << i + 1 << " ---\n";
+        vet[i] = cadastrar_aluno();
+    }
+
+    // Imprimir todos
+    cout << "\n\n======= IMPRIMINDO TODOS OS ALUNOS =======\n";
+    for (int i = 0; i < n; i++) {
+        imprimir_aluno(vet[i]);
+    }
+
+    return 0;
+}
